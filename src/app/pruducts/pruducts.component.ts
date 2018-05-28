@@ -9,6 +9,7 @@ export class PruductsComponent implements OnInit {
 
   productName = 'A book';
   isDisabled = true;
+  products = ['A book', 'The Milan'];
 
   constructor() {
     setTimeout(() => {
@@ -18,6 +19,10 @@ export class PruductsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onAddProduct() {
+    this.products.push(this.productName);
   }
 
 
