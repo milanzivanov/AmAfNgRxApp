@@ -1,6 +1,7 @@
-<section>
+<section fxLayoutGap="10px">
   <form fxLayout="column"
         fxLayoutAlign="center center"
+        fxLayoutGap="10px"
         #f="ngForm"
         (ngSubmit)="onSubmit(f)">
     <mat-form-field>
@@ -33,14 +34,24 @@
       <input matInput
              placeholder="Your birthday"
              [matDatepicker]="picker"
-             [max]="maxDate">
+             [max]="maxDate"
+             ngModel
+             name="birthday"
+             required>
       <mat-datepicker-toggle matSuffix
                              [for]="picker">
       </mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-checkbox labelPosition="before"
+                  ngModel name="agree"
+                  required
+                  color="primary">
+      Agree to Terms and Conditions.
+    </mat-checkbox>
     <button type="submit"
             mat-raised-button
-            color="primary">Submit</button>
+            color="primary"
+            [disabled]="f.invalid">Submit</button>
   </form>
 </section>
