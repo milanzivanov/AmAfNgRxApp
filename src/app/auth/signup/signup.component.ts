@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
+  myEmail = 'milan@test.com';
   maxDate;
 
   constructor() { }

@@ -6,8 +6,10 @@
         (ngSubmit)="onSubmit(f)">
     <mat-form-field>
       <input type="email"
-             matInput placeholder="Your email"
-             ngModel name="email"
+             matInput
+             placeholder="Your email"
+             [ngModel]="myEmail"
+             name="email"
              email
              required
              #emailInput="ngModel">
@@ -18,7 +20,7 @@
                Email can not be empty
              </mat-error>
     </mat-form-field>
-    <mat-form-field hintLabel="Should be at least six caractyers!!!">
+    <mat-form-field hintLabel="Should be at least six caracters!!!">
       <input type="password"
              matInput placeholder="Your password"
              ngModel name="password"
@@ -44,7 +46,8 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-checkbox labelPosition="before"
-                  ngModel name="agree"
+                  ngModel
+                  name="agree"
                   required
                   color="primary">
       Agree to Terms and Conditions.
