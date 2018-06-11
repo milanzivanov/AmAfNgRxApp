@@ -1,4 +1,4 @@
- export interface Exercese {
+ export interface Exercise {
   id: string;
   name: string;
   duration: number;
