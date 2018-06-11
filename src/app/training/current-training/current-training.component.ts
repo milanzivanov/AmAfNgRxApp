@@ -24,11 +24,11 @@ export class CurrentTrainingComponent implements OnInit {
   }
 
   startOnResumeTimer() {
-    const step = this.trainingService.getRuningExercise().duration / 100 * 1000;
+    const step = this.trainingService.getRunningExercise().duration / 100 * 1000;
     this.timer = setInterval(() => {
       this.progress = this.progress + 1;
       if (this.progress >= 100) {
-        this.trainingService.compliteExercise();
+        this.trainingService.completeExercise();
         clearInterval(this.timer);
       }
     }, step);
